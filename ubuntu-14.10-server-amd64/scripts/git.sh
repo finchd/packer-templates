@@ -3,16 +3,16 @@
 apt-get -y install --no-install-recommends build-essential gettext libcurl4-gnutls-dev libexpat1-dev
 
 cd /tmp
-wget https://www.kernel.org/pub/software/scm/git/git-2.2.1.tar.gz
-tar zxvf git-2.2.1.tar.gz
-cd git-2.2.1/
+wget https://www.kernel.org/pub/software/scm/git/git-2.3.2.tar.gz
+tar zxvf git-2.3.2.tar.gz
+cd git-2.3.2/
 ./configure
 #Compile it and put it into /usr/local
 make prefix=/usr/local all; make prefix=/usr/local install
 
 #remove the source code and tarball so they don't take up space in the final, packaged VM
 cd /tmp
-rm -rf /tmp/git-2.2.1/ /tmp/git-2.2.1.tar.gz
+rm -rf /tmp/git-2.3.2/ /tmp/git-2.3.2.tar.gz
 
 cp /tmp/gitconfig /home/vagrant/.gitconfig
 cp /tmp/gitignore_global /home/vagrant/.gitignore_global
