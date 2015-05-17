@@ -37,6 +37,10 @@ cd /home/vagrant/.oh-my-zsh/custom/plugins
 #cat the uploaded vagrant .zshrc into the /home/vagrant/.zshrc file
 cat /tmp/vagrant-zshrc > /home/vagrant/.zshrc
 
+#Copy the .zsh_history file so we have some frequently used commands available for use
+#as soon as VMs are booted from the base box:
+cat /tmp/vagrant_zsh_history > /home/vagrant/.zsh_history
+
 chown -R vagrant:vagrant /home/vagrant/
 #cat in the uploaded ZSH theme
 cat /tmp/vagrant-zsh-theme.zsh-theme > /home/vagrant/.oh-my-zsh/themes/vagrant-zsh-theme.zsh-theme
@@ -75,6 +79,10 @@ cat /tmp/root-zshrc > /root/.zshrc
 
 #cat in the uploaded ZSH theme
 cat /tmp/root-zsh-theme.zsh-theme > /root/.oh-my-zsh/themes/root-zsh-theme.zsh-theme
+
+#Copy the .zsh_history file so we have some frequently used commands available for use
+#as soon as VMs are booted from the base box:
+cat /tmp/root_zsh_history > /root/.zsh_history
 
 #Install rbenv and some plugins
 /usr/local/bin/git clone git://github.com/sstephenson/rbenv.git /root/.rbenv

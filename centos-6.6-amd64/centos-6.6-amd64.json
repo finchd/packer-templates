@@ -88,7 +88,17 @@
       "type": "file",
       "source": "files/root_bash_profile",
       "destination": "/tmp/root_bash_profile"
-    },    
+    },
+    {
+      "type": "file",
+      "source": "files/vagrant_zsh_history",
+      "destination": "/tmp/vagrant_zsh_history"
+    },
+    {
+      "type": "file",
+      "source": "files/root_zsh_history",
+      "destination": "/tmp/root_zsh_history"
+    },
     {
       "type": "shell",
       "scripts": [

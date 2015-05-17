@@ -1,0 +1,10 @@
+: 1428195762:0;puppet agent -t
+: 1428195764:0;service puppet stop
+: 1428195765:0;sudo -i
+: 1428195766:0;exit
+: 1428195774:0;cat .zsh_history
+: 1428197164:0;puppet cert list
+: 1428197192:0;puppet cert sign --all
+: 1428197742:0;vim /etc/puppet/auth.conf
+: 1428197755:0;vim /etc/puppet/fileserver.conf
+: 1428197767:0;service puppetmaster restart
