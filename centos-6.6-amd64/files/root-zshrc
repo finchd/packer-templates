@@ -5,7 +5,7 @@
 #################################
 #
 
-export PATH=/root/.rbenv/shims:/root/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/texbin:/usr/local/share/npm/bin:/opt/local/bin:/opt/local/sbin
+export PATH=/root/.rbenv/shims:/root/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/texbin:/usr/local/share/npm/bin:/opt/local/bin:/opt/local/sbin:/opt/puppetlabs/bin
 
 #################################
 # Sourcing stuff
