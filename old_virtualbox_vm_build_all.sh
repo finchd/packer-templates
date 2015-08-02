@@ -54,3 +54,8 @@ packer build --only=virtualbox template.json
 #Ubuntu 13.10
 cd ../ubuntu-13.10-server-amd64
 packer build --only=virtualbox-iso template.json
+
+#Ubuntu 14.10
+cd ../ubuntu-14.10-server-amd64
+packer build --only=virtualbox-iso ubuntu-14.10-server-amd64.json
+
