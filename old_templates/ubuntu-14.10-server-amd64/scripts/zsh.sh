@@ -4,7 +4,7 @@
 # ZSH installation
 ##############################
 cd /tmp
-wget http://sourceforge.net/projects/zsh/files/zsh/5.0.8/zsh-5.0.8.tar.gz
+wget https://github.com/zsh-users/zsh/archive/zsh-5.0.8.tar.gz
 tar zxvf zsh-5.0.8.tar.gz
 cd zsh-5.0.8
 ./configure
