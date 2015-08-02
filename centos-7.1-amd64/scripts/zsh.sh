@@ -4,15 +4,15 @@
 # ZSH installation
 ##############################
 cd /tmp
-wget http://sourceforge.net/projects/zsh/files/zsh/5.0.7/zsh-5.0.7.tar.gz
-tar zxvf zsh-5.0.7.tar.gz
-cd zsh-5.0.7
-./configure
+wget http://sourceforge.net/projects/zsh/files/zsh/5.0.8/zsh-5.0.8.tar.gz
+tar zxvf zsh-5.0.8.tar.gz
+cd zsh-5.0.8
+./configure --with-tcsetpgrp
 sudo make
 sudo make install
 
 #Remove the tarball and tarball extract so they don't take up space in the final, packaged VM
-rm -rf /tmp/zsh-5.0.7/ /tmp/zsh-5.0.7.tar.gz
+rm -rf /tmp/zsh-5.0.8/ /tmp/zsh-5.0.8.tar.gz
 
 ##############################
 # Vagrant ZSH setup stuff
@@ -89,6 +89,10 @@ cat /tmp/root-zsh-theme.zsh-theme > /root/.oh-my-zsh/themes/root-zsh-theme.zsh-t
 mkdir -p /root/.rbenv/plugins
 cd /root/.rbenv/plugins
 /usr/local/bin/git clone git://github.com/sstephenson/ruby-build.git
+
+#echo "sleeping for ZSH troubleshooting..."
+
+#sleep 3600
 
 #Change the login shell to zsh for the vagrant and root users
 echo "/usr/local/bin/zsh" >> /etc/shells
