@@ -4,7 +4,7 @@ yum install -y gcc make gcc-c++ zlib-devel perl-ExtUtils-Embed gettext curl-deve
 
 cd /tmp
 wget https://www.kernel.org/pub/software/scm/git/git-2.5.0.tar.gz
-tar zxvf git-2.5.0.tar.gz
+tar zxf git-2.5.0.tar.gz
 cd git-2.5.0/
 ./configure
 #Compile it and put it into /usr/local

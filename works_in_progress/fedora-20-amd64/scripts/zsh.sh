@@ -5,7 +5,7 @@
 ##############################
 cd /tmp
 wget https://github.com/zsh-users/zsh/archive/zsh-5.0.8.tar.gz
-tar zxvf zsh-5.0.8.tar.gz
+tar zxf zsh-5.0.8.tar.gz
 cd zsh-zsh-5.0.8
 ./configure
 sudo make
