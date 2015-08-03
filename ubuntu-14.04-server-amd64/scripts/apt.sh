@@ -1,8 +1,5 @@
 #!/bin/sh -x
 
-#Enable the progress bar:
-echo 'Dpkg::Progress-Fancy "1";' > /etc/apt/apt.conf.d/99progressbar
-
 apt-get -y install --no-install-recommends linux-headers-$(uname -r) build-essential
 apt-get -y install --no-install-recommends zlib1g-dev libssl-dev libreadline-gplv2-dev libyaml-dev
 apt-get -y install --no-install-recommends dkms
