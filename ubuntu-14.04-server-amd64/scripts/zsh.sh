@@ -3,11 +3,18 @@
 ##############################
 # ZSH installation
 ##############################
+
+#ZSH needs autoconf in order to generate the configure script and Makefile:
+apt-get -y install --no-install-recommends autoconf
+
 cd /tmp
 wget https://github.com/zsh-users/zsh/archive/zsh-5.0.8.tar.gz
-tar zxvf zsh-5.0.8.tar.gz
-cd zsh-5.0.8
-./configure
+tar zxf zsh-5.0.8.tar.gz
+cd zsh-zsh-5.0.8
+#Generate the configure script first...
+./Util/preconfig
+#...then run it:
+./configure --with-tcsetpgrp
 sudo make
 sudo make install
 
@@ -84,3 +91,8 @@ cat /tmp/root-zsh-theme.zsh-theme > /root/.oh-my-zsh/themes/root-zsh-theme.zsh-t
 git clone git://github.com/sstephenson/rbenv.git /root/.rbenv
 mkdir -p /root/.rbenv/plugins
 cd /root/.rbenv/plugins; git clone git://github.com/sstephenson/ruby-build.git
+
+#Cleanup stuff
+
+#Remove autoconf, which was installed above:
+apt-get -y remove autoconf
