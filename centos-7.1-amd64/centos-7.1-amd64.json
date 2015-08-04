@@ -122,6 +122,10 @@
             "scripts/yum.sh",
             "scripts/vagrant.sh",
             "scripts/vmware_fusion.sh",
+            "scripts/git.sh",
+            "scripts/zsh.sh",
+            "scripts/bash.sh",
+            "scripts/vim.sh",
             "scripts/cleanup.sh"
           ]
         }
