@@ -3,10 +3,17 @@
 ##############################
 # ZSH installation
 ##############################
+
+#ZSH needs autoconf to compile:
+yum -y install autoconf
+
 cd /tmp
 wget https://github.com/zsh-users/zsh/archive/zsh-5.0.8.tar.gz
 tar zxf zsh-5.0.8.tar.gz
 cd zsh-zsh-5.0.8
+#Generate the configure script first...
+./Util/preconfig
+#...then run it:
 ./configure --with-tcsetpgrp
 sudo make
 sudo make install
