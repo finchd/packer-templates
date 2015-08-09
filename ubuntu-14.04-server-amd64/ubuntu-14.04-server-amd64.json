@@ -15,9 +15,9 @@
       "disk_size": 65536,
       "guest_os_type": "Ubuntu_64",
       "http_directory": "http",
-      "iso_checksum": "8acd2f56bfcba2f7ac74a7e4a5e565ce68c024c38525c0285573e41c86ae90c0",
+      "iso_checksum": "a3b345908a826e262f4ea1afeb357fd09ec0558cf34e6c9112cead4bb55ccdfb",
       "iso_checksum_type": "sha256",
-      "iso_url": "http://releases.ubuntu.com/trusty/ubuntu-14.04.2-server-amd64.iso",
+      "iso_url": "http://releases.ubuntu.com/trusty/ubuntu-14.04.3-server-amd64.iso",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -42,12 +42,14 @@
         "initrd=/install/initrd.gz -- <enter><wait>"
       ],
       "boot_wait": "10s",
+      "headless": "{{ user `headless` }}",
       "disk_size": 65536,
       "guest_os_type": "ubuntu-64",
       "http_directory": "http",
-      "iso_checksum": "8acd2f56bfcba2f7ac74a7e4a5e565ce68c024c38525c0285573e41c86ae90c0",
+      "iso_checksum": "a3b345908a826e262f4ea1afeb357fd09ec0558cf34e6c9112cead4bb55ccdfb",
       "iso_checksum_type": "sha256",
-      "iso_url": "http://releases.ubuntu.com/trusty/ubuntu-14.04.2-server-amd64.iso",
+      "iso_url": "http://releases.ubuntu.com/trusty/ubuntu-14.04.3-server-amd64.iso",
+      "tools_upload_flavor": "linux",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -102,26 +104,48 @@
       "destination": "/tmp/root_bash_profile"
     },
     {
+      "type": "file",
+      "source": "files/vagrant_zsh_history",
+      "destination": "/tmp/vagrant_zsh_history"
+    },
+    {
+      "type": "file",
+      "source": "files/root_zsh_history",
+      "destination": "/tmp/root_zsh_history"
+    },
+    {
       "type": "shell",
-      "scripts": [
-        "scripts/build_time.sh",
-        "scripts/apt.sh",
-        "scripts/virtualbox.sh",
-        "scripts/sudo.sh",
-        "scripts/vagrant.sh",
-        "scripts/base.sh",
-        "scripts/git.sh",
-        "scripts/zsh.sh",
-        "scripts/bash.sh",
-        "scripts/vim.sh",
-        "scripts/cleanup.sh"
-      ],
+      "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'",
       "override": {
         "virtualbox-iso": {
-          "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'"
+          "scripts": [
+            "scripts/build_time.sh",
+            "scripts/apt.sh",
+            "scripts/virtualbox.sh",
+            "scripts/sudo.sh",
+            "scripts/vagrant.sh",
+            "scripts/base.sh",
+            "scripts/git.sh",
+            "scripts/zsh.sh",
+            "scripts/bash.sh",
+            "scripts/vim.sh",
+            "scripts/cleanup.sh"
+          ]
         },
         "vmware-iso": {
-          "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'"
+          "scripts": [
+            "scripts/build_time.sh",
+            "scripts/apt.sh",
+            "scripts/vmware_fusion.sh",
+            "scripts/sudo.sh",
+            "scripts/vagrant.sh",
+            "scripts/base.sh",
+            "scripts/git.sh",
+            "scripts/zsh.sh",
+            "scripts/bash.sh",
+            "scripts/vim.sh",
+            "scripts/cleanup.sh"
+          ]
         }
       }
     }
@@ -129,7 +153,7 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "output": "packer_ubuntu-14.04-server-amd64_{{.Provider}}.box"
+      "output": "packer_ubuntu-14.04-server-amd64-{{.Provider}}.box"
     }
   ]
 }
