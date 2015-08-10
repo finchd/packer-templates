@@ -6,5 +6,8 @@ service ufw stop
 echo "Disabling ufw..."
 ufw disable
 
+#Flush the iptables rule lists:
+iptables -F
+
 #Don't do reverse DNS lookups of SSH clients that connect; this usually speeds up SSH by quite a bit:
 echo "UseDNS no" >> /etc/ssh/sshd_config

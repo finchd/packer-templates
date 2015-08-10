@@ -5,6 +5,8 @@ sed -i "s/^.*requiretty/#Defaults requiretty/" /etc/sudoers
 #Stop and disable iptables
 systemctl stop iptables
 systemctl disable iptables
+#Flush all of iptable's rules:
+iptables -F
 
 #Stop and disable firewalld
 systemctl stop firewalld
