@@ -8,9 +8,9 @@
 apt-get -y install --no-install-recommends autoconf
 
 cd /tmp
-wget https://github.com/zsh-users/zsh/archive/zsh-5.0.8.tar.gz
-tar zxf zsh-5.0.8.tar.gz
-cd zsh-zsh-5.0.8
+wget https://github.com/zsh-users/zsh/archive/zsh-5.2.tar.gz
+tar zxf zsh-5.2.tar.gz
+cd zsh-zsh-5.2
 #Generate the configure script first...
 ./Util/preconfig
 #...then run it:
@@ -23,7 +23,7 @@ chsh -s `which zsh` vagrant
 chsh -s `which zsh` root
 
 #Remove the tarball and tarball extract so they don't take up space in the final, packaged VM
-rm -rf /tmp/zsh-5.0.8/ /tmp/zsh-5.0.8.tar.gz
+rm -rf /tmp/zsh-5.2/ /tmp/zsh-5.2.tar.gz
 
 ##############################
 # Vagrant ZSH setup stuff
