@@ -6,7 +6,7 @@ cd /tmp
 wget https://www.kernel.org/pub/software/scm/git/git-2.7.0.tar.gz
 tar zxf git-2.7.0.tar.gz > /dev/null
 cd git-2.7.0/
-./configure
+./configure > /dev/null
 #Compile it and put it into /usr/local
 sudo make prefix=/usr/local all > /dev/null; sudo make prefix=/usr/local install > /dev/null
 
